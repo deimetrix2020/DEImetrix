@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_letterpad" language="groovy" pageWidth="800" pageHeight="792" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e9d190d2-cf2f-4f98-8ce8-d7d13d74f1ab">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="199"/>
+	<parameter name="logged_name" class="java.lang.String"/>
+	<parameter name="diversity_txt" class="java.lang.String"/>
+	<parameter name="equity_txt" class="java.lang.String"/>
+	<parameter name="inclusion_txt" class="java.lang.String"/>
+	<parameter name="diversity_img" class="java.lang.String"/>
+	<parameter name="equity_img" class="java.lang.String"/>
+	<parameter name="inclusion_img" class="java.lang.String"/>
+	<parameter name="total_img" class="java.lang.String"/>
+	<parameter name="total_score_per" class="java.lang.String"/>
+	<parameter name="image_arrow_mark" class="java.lang.String"/>
+	<parameter name="report_logo" class="java.lang.String"/>
+	<parameter name="banner_img" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="120" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="5" width="750" height="115" uuid="92fa97bf-a801-4c91-9f5e-1489e706e807"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<topPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="82" width="726" height="30" forecolor="#FFCC33" uuid="dd312a5c-9712-4283-b854-fea134cf3eaa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{logged_name}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="161" y="10" width="439" height="70" uuid="0a52402d-76af-42de-878e-775120b8f38a"/>
+				<imageExpression><![CDATA[$P{report_logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="620" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="0" width="750" height="615" uuid="ca3fcdff-177f-4344-8890-38ac055f1233"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<topPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="86" width="245" height="38" uuid="30526950-08a7-408e-9d71-403d669fa41a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Your DEImetrix Score is ]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="543" y="436" width="20" height="20" forecolor="#FFFFFF" backcolor="#C5E0B4" uuid="a730c0a2-2292-4fbe-9db5-f51e6bac33be"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="543" y="464" width="20" height="20" forecolor="#FFFFFF" backcolor="#FFE699" uuid="1b3aedb5-2190-426e-9878-fb1008af81ef"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="543" y="492" width="20" height="20" forecolor="#FFFFFF" backcolor="#FF8F95" uuid="86be5d5d-e263-4ae9-b70a-5a68c1625731"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="563" y="436" width="179" height="20" uuid="42c4649d-5305-41cd-9b48-d6489b8b78a6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[High (above 67%)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="563" y="464" width="179" height="20" uuid="cec13e6d-9a3c-4eaa-bd28-7354bc186f02"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Medium (b/w 33% and 67%)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="563" y="492" width="179" height="20" uuid="4b92030d-2bea-4222-9c59-900da40d364b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Low (below 33%)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="31" y="569" width="135" height="34" uuid="8fc27d62-4fe0-4654-b6d9-1627b7a4a0b9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{diversity_txt}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="217" y="569" width="135" height="34" uuid="0f87091d-916c-4bbd-a612-dd8075285ad6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{equity_txt}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="392" y="569" width="135" height="34" uuid="e29d46ea-723e-4d98-a906-da372b78266f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{inclusion_txt}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="31" y="344" width="135" height="222" uuid="80b07941-84f5-4a7f-baf5-e9a6b25e431a"/>
+				<imageExpression><![CDATA[$P{diversity_img}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="217" y="344" width="135" height="222" uuid="dfc10c60-d9d9-45e7-b295-8c696971c5c5"/>
+				<imageExpression><![CDATA[$P{equity_img}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="392" y="344" width="135" height="222" uuid="4a9db84e-2190-481a-9f7a-29906f173b85"/>
+				<imageExpression><![CDATA[$P{inclusion_img}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="217" y="16" width="135" height="223" uuid="4874c815-62ed-4ee2-8fd7-4513639cda10"/>
+				<imageExpression><![CDATA[$P{total_img}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="619" y="86" width="79" height="38" uuid="0a929f71-eb70-4fc9-a77b-effe4de9a5cd"/>
+				<textElement verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total_score_per}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="38" y="256" width="489" height="69" uuid="c72759e3-def1-4c74-a1e1-01d180d69509"/>
+				<imageExpression><![CDATA[$P{image_arrow_mark}]]></imageExpression>
+			</image>
+		</band>
+		<band height="750">
+			<staticText>
+				<reportElement x="5" y="35" width="750" height="65" uuid="7e5c8959-30a3-4cf0-b22f-9ff9f43d38af"/>
+				<box leftPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Highest Dimension:  Develops cultural intelligence (Diversity)
+Second Highest Dimension:  Appreciates diverse thought (Diversity), Creates feeling of belonging (Inclusion)
+Third Highest Dimension:  Promotes Participation (Inclusion)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="124" width="750" height="369" uuid="dc152291-4b4b-4c48-a04f-5a1e75732332"/>
+				<box leftPadding="1">
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Lowest Dimension:  Fosters Stewardship (Equity)
+Second Lowest Dimension:  Acts with fairness (Equity), Interacts with humility (Inclusion)
+Third Lowest Dimension:  Engages respectfully (Equity)
+
+The purpose of DEImetrix assessment is to increase behavioral self-awareness and measure commitment to Diversity, Equity and Inclusion in daily interactions, processes, and decisions.
+
+Diversity is the presence of differences that may include race, gender, religion, sexual orientation, ethnicity, nationality, socioeconomic status, language, (dis)ability, age, religious commitment, or political perspective.  It also includes differences of thought, perspective, and opinion.  In short, are you open to differences?
+
+Equity is promoting justice, impartiality, and fairness with regard to procedures, processes, and distribution of resources.  It strives to eliminate any asymmetrical or disproportionate access to opportunities and fair treatment.  In other words, are you fair irrespective of differences?
+
+Inclusion is a commitment to ensure those that are diverse are welcomed. Inclusion occurs when you are truly inviting to all. It includes the degree in which diverse individuals are able to reach their full potential.  Are you engaging those that are different?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="99" width="750" height="26" uuid="35eb43e4-c725-4986-844d-e9d4956b19a5"/>
+				<box>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="false"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Lowest Domain:  Equity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="10" width="750" height="26" uuid="11fd1d6f-af53-4274-aa1a-ab0053a20932"/>
+				<box leftPadding="1" rightPadding="1">
+					<pen lineColor="#CCCCCC"/>
+					<topPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<bottomPen lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="false"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Highest Domain:  Diversity
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="517" width="750" height="230" uuid="c03ae300-f3b8-44b0-bb68-93e134ebaaa1"/>
+				<box>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[The DEImetrix Assessment Model measures your attitudes, preferences, and beliefs about Diversity, Equity, and Inclusion.  Each of these domains (Diversity, Equity, and Inclusion) is further comprised of three dimensions, which are illustrated below:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="492" width="750" height="26" uuid="98608bb3-6bc5-4b91-86ec-3244be609e65"/>
+				<box>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="false"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Understanding the DEImetrix Assessment Model]]></text>
+			</staticText>
+		</band>
+		<band height="750">
+			<staticText>
+				<reportElement x="5" y="5" width="750" height="432" uuid="7b3d1f8d-25bb-4393-8f4f-f3f9276dc3b0"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="88" y="409" width="171" height="27" uuid="984c41cd-0cc2-4950-893b-72fe2ab0a9b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Are you open to difference?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="504" y="410" width="182" height="27" uuid="553720bd-b806-41f8-bfa8-f41801e7dca2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Are you engaging those that
+ are different?
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="410" width="167" height="27" uuid="27217e8c-8ecc-4fd3-854c-273bfb39aefb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Are you fair irrespective
+ of difference?
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="461" width="750" height="285" uuid="52e1656c-e5c9-41d3-8a81-894c4852fdb0"/>
+				<box>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Your DEImetrix assessment is the average of your domain scores (Diversity, Equity, Inclusion and Overall).  The three main domains (Diversity, Equity, and Inclusion) are comprised of the averages of their dimensions.  Every domain and dimension have their own corresponding index and percentile.
+
+Diversity’s dimensions are:
+•  Comfortable with Differences: Embraces opportunities to interact with people who exhibit different values, behaviors, and attitudes from what one considers “normal.” Characteristics include an ability to look past superficial appearances, sexual orientation, education, income, age, disability, and other such factors.
+•  Appreciates Diverse Thought: Exemplifies the ability and willingness to listen to different opinions. Characteristics include patience, listening without judgment, as well as the need to know and understand the thoughts and feelings of others.
+•  Develops Cultural Intelligence: Accepts, relates to, and easily works with people who are from different countries and cultures. Characteristics include broad mindedness, curiosity, and an ability to empathize and accept people from diverse backgrounds and countries.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="436" width="750" height="26" uuid="e17e175d-3940-42f4-88f1-b876bae28ada"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="false"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[DEImetrix Domains and Dimensions]]></text>
+			</staticText>
+			<image>
+				<reportElement x="73" y="10" width="625" height="399" uuid="d04ae007-eb9e-4189-9286-2ffeb0e1f875"/>
+				<imageExpression><![CDATA[$P{banner_img}]]></imageExpression>
+			</image>
+		</band>
+		<band height="750">
+			<staticText>
+				<reportElement x="5" y="5" width="750" height="360" uuid="a7671b9d-983f-4084-bfe7-ffee5aee2aa3"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Equity’s dimensions are:
+•  Acts with Fairness: Seeks and provides equal opportunities to colleagues, subordinates, and superiors, regardless of job title or position. Characteristics include sharing ideas and opportunities throughout the organization, and by helping level the playing field for all employees in the organization.
+•  Engages Respectfully: Treats everyone as an equal, with kindness and respect. Characteristics include acknowledging people throughout the organization, regardless of job title, team, department, or position.
+•  Fosters Stewardship: Takes ownership of their job functions and responsibilities, including mistakes, while helping others. Characteristics include accepting responsibility for personal performance—including owning and learning from errors—while recognizing the needs of others beyond the person’s assigned responsibilities.
+
+Inclusion’s dimensions are:
+•  Creates a Feeling of Belonging: Embraces the thoughts and opinions of other team members, welcomes new team members, and helps them acclimate. Characteristics include friendliness, humor, and sincerity.
+•  Interacts with Humility: Recognizes accomplishments as a shared effort and offers credit to other team members. Characteristics include selfless behaviors, generosity, and an ability to recognize and appreciate others’ achievements.
+•  Promotes Participation: Welcomes and encourages others to join in and share opinions during activities, meetings, and events, including introducing new people to team members. Characteristics include friendliness, compassion, humor, and sensitivity.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="364" width="750" height="26" uuid="eb33b3a7-dc79-4786-8357-255a0dd24aa9"/>
+				<box>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="false"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[The DEImetrix Takeaway]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="389" width="750" height="355" uuid="f4f9b141-3b38-45cb-aae3-aef090a08fd8"/>
+				<box>
+					<leftPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[It is important to recognize that these scores only represent where you are today and can be improved.
+
+When looking at your results, please take note of domains and dimensions that are relatively lower or out of balance with your strengths.  It is not uncommon for one domain to be more developed than the others.  For example, improvements in Diversity often occur before those in Equity or Inclusion.
+
+By completing the DEImetrix assessment, you took the first step toward creating awareness. Reading your entire DEImetrix assessment report, you showed you are open minded and care. With additional understanding, education, and practice, you can improve your awareness and help make you work environment more enjoyable—even profitable—for you, your associates, and your organization.
+
+Your next step is to focus on one specific dimension from one specific DEI domain and make a conscious decision to work on improving one specific behavior.]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
